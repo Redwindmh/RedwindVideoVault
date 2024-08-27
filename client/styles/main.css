@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  background: #000;
+}
+
+h1 {
+  color: red;
+  text-align: center;
+}
+
+.video-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: red;
+}
+
+.vid-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.single-vid-box {
+  display: flex;
+  justify-content: center;
+}
+
+.vid-ud-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.single-vid-name {
+  color: #fff;
+}
+
+.single-vid-description {
+  color: #fff;
+}
+
+.single-vid-iframe {
+  height: 500px;
+  width: 800px;
+
+  @media only screen and (max-width: 600px) {
+    height: 500px;
+    width: 800px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 500px;
+    width: 800px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 500px;
+    width: 800px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: 500px;
+    width: 800px;
+  }
+}
+
+.edit-button {
+  background: green;
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: 15px;
+}
+
+.delete-button {
+  background: red;
+  color: #fff;
+  padding: .5rem 1rem;
+  border-radius: 15px;
+}
+
+.footer-info {
+  color: #fff;
+}

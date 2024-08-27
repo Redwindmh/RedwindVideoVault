@@ -1,0 +1,4 @@
+node_modules
+vidList.json
+.env
+Dockerfile

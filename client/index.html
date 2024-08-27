@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Redwind Video Vault</title>
+  <link href="./styles/main.css" rel="stylesheet">
+</head>
+
+<body>
+  <div id="content">
+    <h1>Redwind Video Vault</h1>
+    <div class="video-form">
+      <form id="add-video">
+        <label for="name-input">Name</label>
+        <input type="text" id="name-input" />
+        <br>
+        <label for="url-input">URL</label>
+        <input type="url" id="url-input" />
+        <br>
+        <label for="description-input">Description</label>
+        <textarea type="textfield" id="description-input"></textarea>
+        <br>
+        <button type="submit" id="submit-button" form="add-video">Add Video</button>
+      </form>
+      <!-- <button id="delete-button" value="1">Delete 4</button> -->
+    </div>
+    <div class="vid-box" id="vid-box">
+    </div>
+    <footer>
+      <div class="footer-info">
+        <a href="/about" id="about-link">
+          <p>About the Vault</p>
+        </a>
+      </div>
+    </footer>
+  </div>
+  <script src="./scripts/main.js"></script>
+</body>
+
+</html>
