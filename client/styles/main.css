@@ -16,6 +16,11 @@ h1 {
   color: red;
 }
 
+.video-form form {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .vid-box {
   display: flex;
   flex-wrap: wrap;
@@ -70,6 +75,7 @@ h1 {
   background: green;
   color: #fff;
   padding: .5rem 1rem;
+  width: 30%;
   border-radius: 15px;
 }
 
@@ -77,6 +83,7 @@ h1 {
   background: red;
   color: #fff;
   padding: .5rem 1rem;
+  width: 30%;
   border-radius: 15px;
 }
 

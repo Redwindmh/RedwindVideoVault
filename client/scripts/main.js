@@ -33,9 +33,14 @@ fetch("http://localhost:8081/api/videos").then((res) => {
 })
   .then((videos) => {
     videos.map((video)  => {
-      vidBox.innerHTML += `<div><a href="video/${video.id}" id="single-vid-link"><p style="color:white;">${JSON.stringify(video.name)}</p></a><iframe src=${JSON.stringify(video.url)} title=${JSON.stringify(video.name)}></iframe><div class="vid-ud-buttons"><div class="edit-button" id="edit-buton">Edit</div><button name="delete" class="delete-button" id="delete-button" type="button" onClick="deleteVid(${video.id})">Delete</button></div></div>`
+      vidBox.innerHTML += `<div><a href="video/${video.id}" id="single-vid-link"><p style="color:white;">${JSON.stringify(video.name)}</p></a><iframe src=${JSON.stringify(video.url)} title=${JSON.stringify(video.name)}></iframe><div class="vid-ud-buttons"><button name="edit" class="edit-button" id="edit-button" type="button" onClick="editVid(${video.id})">Edit</button><button name="delete" class="delete-button" id="delete-button" type="button" onClick="deleteVid(${video.id})">Delete</button></div></div>`
     })
   })
+
+// Function to edit video
+const editVid = (id) => {
+  console.log(`Edit video ${id}`)
+}
 
 // Function to delete a video
 const deleteVid = (id) => {
@@ -51,7 +56,6 @@ const deleteVid = (id) => {
     })
 }
 
-
 const urlRoutes = {
   404: {
     template: "/templates/404.html",
@@ -63,7 +67,7 @@ const urlRoutes = {
     title: "Home page",
     description: "This is the home page"
   },
-  "/video/": {
+  "/video": {
     template: "/templates/single-video-page.html",
     title: "Single video page",
     description: "This is the page for loading and watching a single video"
@@ -83,19 +87,20 @@ aboutLink.addEventListener('click', (event) => {
   // if (!target.matches("a")) {
   //   return
   // }
-  event.preventDefault()
-  route()
+  // event.preventDefault()
+  console.log("button works")
+  // route()
 })
 
 const route = (event) => {
+  // event.preventDefault()
   event = event || window.event
-  event.preventDefault()
-  window.history.pushState({}, "", event.target.href)
+  window.history.pushState({}, "", event.target.value)
   locationHandler()
 }
 
 console.log(window.location.pathname)
-console.log(document.getElementById("content"))
+console.log(fetch(urlRoutes["/about"].template).then((response)=>response.text()))
 
 const locationHandler = async () => {
   let path = window.location.pathname
@@ -105,7 +110,7 @@ const locationHandler = async () => {
   const route = urlRoutes[path] || urlRoutes["404"]
   const html = await fetch(route.template).then((response)=>response.text())
   document.getElementById("content").innerHTML = html
-  console.log(html)
+  // console.log(html)
   document.title = route.title
   // document.querySelector('meta[name="description"]').setAttribute("description", route.description)
 }
@@ -114,4 +119,4 @@ const locationHandler = async () => {
 window.onpopstate = locationHandler
 window.route = route
 
-// locationHandler()
+locationHandler()

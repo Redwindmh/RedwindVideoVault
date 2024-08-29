@@ -10,7 +10,9 @@
 
 <body>
   <div id="content">
-    <h1>Redwind Video Vault</h1>
+    <a href="/" value="/" onclick="route()">
+      <h1>Redwind Video Vault</h1>
+    </a>
     <div class="video-form">
       <form id="add-video">
         <label for="name-input">Name</label>
@@ -24,15 +26,16 @@
         <br>
         <button type="submit" id="submit-button" form="add-video">Add Video</button>
       </form>
-      <!-- <button id="delete-button" value="1">Delete 4</button> -->
     </div>
     <div class="vid-box" id="vid-box">
+      <iframe src="https://www.youtube.com/embed/rcsD2okrGbo?si=KgqbLbEoBIY2Bxd0" frameborder="0"></iframe>
     </div>
     <footer>
       <div class="footer-info">
-        <a href="/about" id="about-link">
+        <a href="/about" id="about-link" value="about-link" onclick="route()">
           <p>About the Vault</p>
         </a>
+        <button type="button" id="about-link" onclick="route()" value="about">About</button>
       </div>
     </footer>
   </div>

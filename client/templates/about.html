@@ -10,9 +10,38 @@
 
 <body>
   <div id="content">
-    <h1>Test</h1>
-  </div>
-  <script src="../scripts/main.js"></script>
+    <a href="/" value="/" onclick="route()">
+      <h1>Redwind Video Vault</h1>
+    </a>
+    <h2>About Page</h2>
+    <div class="video-form">
+      <form id="add-video">
+        <label for="name-input">Name</label>
+        <input type="text" id="name-input" />
+        <br>
+        <label for="url-input">URL</label>
+        <input type="url" id="url-input" />
+        <br>
+        <label for="description-input">Description</label>
+        <textarea type="textfield" id="description-input"></textarea>
+        <br>
+        <button type="submit" id="submit-button" form="add-video">Add Video</button>
+      </form>
+    </div>
+    <div class="vid-box" id="vid-box">
+      <iframe src="https://www.youtube.com/embed/rcsD2okrGbo?si=KgqbLbEoBIY2Bxd0" frameborder="0"></iframe>
+    </div>
+    <footer>
+      <div class="footer-info">
+        <!-- <a href="/about" id="about-link"> -->
+        <p>About the Vault</p>
+        <!-- </a> -->
+      </div>
+    </footer>
+
+
+
+    <script src="../scripts/main.js"></script>
 </body>
 
 </html>
