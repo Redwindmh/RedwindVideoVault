@@ -8,6 +8,13 @@ h1 {
   text-align: center;
 }
 
+.ht-logo {
+  display: block;
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+}
+
 .video-form {
   display: flex;
   flex-wrap: wrap;

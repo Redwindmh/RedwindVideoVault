@@ -9,6 +9,34 @@ const singleVidBox = document.getElementById("single-vid-box")
 const deleteButton = document.getElementById('delete-button')
 const PORT = 8080
 
+
+// Testing making palge elements moveable using ht logo
+const htLogo = document.getElementById("ht-logo")
+let beingDragged
+
+htLogo.addEventListener('dragstart', dragStart)
+htLogo.addEventListener('drag', dragging)
+htLogo.addEventListener('dragend', dragEnd)
+
+function dragStart (e) {
+  beingDragged = e.target
+  console.log(`You have begun dragging ${e.id}`)
+}
+
+function dragging (e) {
+  e.preventDefault()
+  beingDragged = e.target
+  beingDragged.style.visibility = "hidden"
+  console.log("Drag me, bitch!")
+}
+
+function dragEnd (e) {
+  e.preventDefault()
+  beingDragged.style.visibility = "visible"
+  console.log("You better put me down!")
+}
+
+// Testing adding child elements to a page using JavaScript
 let testing = document.createElement("h2")
 testing.textContent = "CAN YOU SEE THIS"
 testing.style.color = "white"
@@ -38,7 +66,7 @@ const iframeGenerator = () => {
   })
     .then((videos) => {
       videos.map((video)  => {
-        vidBox.innerHTML += `<div><a href="video/${video.id}" id="single-vid-link"><p style="color:white;">${JSON.stringify(video.name)}</p></a><iframe src=${JSON.stringify(video.name)} title=${JSON.stringify(video.name)}></iframe><div class="vid-ud-buttons"><button name="edit" class="edit-button" id="edit-button" type="button" onClick="editVid(${video.id})">Edit</button><button name="delete" class="delete-button" id="delete-button" type="button" onClick="deleteVid(${video.id})">Delete</button></div></div>`
+        vidBox.innerHTML += `<div><a href="video/${video.id}" id="single-vid-link"><p style="color:white;">${JSON.stringify(video.name)}</p></a><iframe src=${JSON.stringify(video.url)} title=${JSON.stringify(video.name)}></iframe><div class="vid-ud-buttons"><button name="edit" class="edit-button" id="edit-button" type="button" onClick="editVid(${video.id})">Edit</button><button name="delete" class="delete-button" id="delete-button" type="button" onClick="deleteVid(${video.id})">Delete</button></div></div>`
 
         // const pageRoute = {
         //   `/video/${video.id}`: {
@@ -65,8 +93,6 @@ const iframeGenerator = () => {
       //   vidBox.appendChild(videoDiv);
       // });
     })
-
-
 }
 
 // Function to edit video
